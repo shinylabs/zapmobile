@@ -26,7 +26,6 @@ class SecureView extends Component {
             <Text name="Activity">Activity</Text>
             <Text name="Communities">Communities</Text>
             <Text name="Profile">Profile</Text>
-            <Text name="New Post">New Post</Text>
         </Tabs>
       </View>
     );
@@ -44,6 +43,11 @@ var styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+  },
+  image: {
+    width: 75,
+    height: 75,
+    alignSelf: "center"
   },
   instructions: {
     textAlign: 'center',

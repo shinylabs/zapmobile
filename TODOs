@@ -3,16 +3,16 @@ ZapMobile MVP
 DAY 0 - 10 hrs
 - tech research
 
-DAY 1 - 7 hrs
+DAY 1 - 10 hrs
 - setup react-native dev env
-- setup github
 
 DAY 2 - 7 hrs
-- setup parse
-- authenticate with parse
-- show activity feed
+- setup app
+- setup router
 
 DAY 3 - 7 hrs
+- authenticate with parse
+- show activity feed
 - show communities list
 - show profile
 

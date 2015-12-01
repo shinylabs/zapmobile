@@ -1,35 +1,32 @@
-"use strict";
- 
-var React = require("react-native");
+'use strict';
 
+import React from 'react-native';
 var {
-    AppRegistry,
-    StyleSheet,
-    Image,
-    Text,
-    View,
-    NavigatorIOS,
+  AppRegistry,
+  Navigator,
 } = React;
- 
-var LoginView = require("./LoginView");
- 
-var ReactProject = React.createClass({
-    render: function() {
-        return (
-            <NavigatorIOS
-                style={styles.navigationContainer}
-                initialRoute={{
-                title: "ZapChain",
-                component: LoginView,
-            }} />
-        );
-    }
+
+var LoginView = require('./LoginView.js')
+
+var App = React.createClass({
+  _renderScene(route, navigator) {
+    var Component = route.component;
+    return (
+      <Component {...route.props} navigator={navigator} route={route} />
+    );
+  },
+  render() {
+
+    return (
+      <Navigator
+        initialRoute={{
+          component: LoginView,
+          type: "right"
+        }}
+        renderScene={this._renderScene}
+      />
+    );
+  }
 });
- 
-var styles = StyleSheet.create({
-    navigationContainer: {
-        flex: 1
-    }
-});
- 
-AppRegistry.registerComponent("ZapMobile", () => ReactProject);
+
+AppRegistry.registerComponent('ZapMobile', () => App);
