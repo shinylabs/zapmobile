@@ -7,6 +7,6 @@
   },
   "dependencies": {
     "react-native": "^0.15.0",
-    "react-native-scrollable-tab-view": "^0.2.2-alpha"
+    "react-native-tabs": "^0.1.3"
   }
 }
