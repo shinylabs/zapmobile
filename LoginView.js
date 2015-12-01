@@ -28,10 +28,13 @@ class LoginView extends Component {
         return (
             <View style={styles.container}>
                 <View>
-                    <TouchableHighlight onPress={(this.onSubmitPressed.bind(this))} style={styles.button}>
+                    <Image
+                        style={styles.image}
+                        source={require('./img/zapchain.png')}/>
+                    <TouchableHighlight onPress={(this.onSubmitPressed.bind(this))} style={styles.facebook_button}>
                         <Text style={styles.buttonText}>Login with Facebook</Text>
                     </TouchableHighlight>
-                    <TouchableHighlight onPress={(this.onSubmitPressed.bind(this))} style={styles.button}>
+                    <TouchableHighlight onPress={(this.onSubmitPressed.bind(this))} style={styles.twitter_button}>
                         <Text style={styles.buttonText}>Login with Twitter</Text>
                     </TouchableHighlight>
                 </View>
@@ -41,9 +44,8 @@ class LoginView extends Component {
  
     onSubmitPressed() {
         this.props.navigator.push({
-            title: "Secure Page",
-            component: SecureView,
-            passProps: {username: this.state.username, password: this.state.password},
+            title: "Welcome",
+            component: SecureView
         });
     }
  
@@ -60,8 +62,9 @@ var styles = StyleSheet.create({
         marginBottom: 10
     },
     image: {
-        width: 500,
-        height: 500
+        width: 150,
+        height: 150,
+        alignSelf: "center"
     },
     formInput: {
         height: 36,
@@ -76,14 +79,24 @@ var styles = StyleSheet.create({
         borderRadius: 8,
         color: "#555555"
     },
-    button: {
-        height: 36,
+    facebook_button: {
+        borderColor: "#3b5698",
+        backgroundColor: "#3b5698",
+        height: 42,
         flex: 1,
-        backgroundColor: "#555555",
-        borderColor: "#555555",
         borderWidth: 1,
-        borderRadius: 8,
-        marginTop: 10,
+        borderRadius: 3,
+        marginTop: 50,
+        justifyContent: "center"
+    },
+    twitter_button: {
+        borderColor: "#34a7ff",
+        backgroundColor: "#34a7ff",
+        height: 42,
+        flex: 1,
+        borderWidth: 1,
+        borderRadius: 3,
+        marginTop: 15,
         justifyContent: "center"
     },
     buttonText: {

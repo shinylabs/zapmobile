@@ -1,7 +1,8 @@
 "use strict";
  
 var React = require("react-native");
- 
+var ScrollableTabView = require('react-native-scrollable-tab-view');
+
 var {
     Component,
     StyleSheet,
@@ -9,6 +10,7 @@ var {
     View,
 } = React;
  
+
 class SecureView extends Component {
  
     constructor(props) {
@@ -21,14 +23,11 @@ class SecureView extends Component {
  
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.heading}>
-                    Welcome {this.props.username}!
-                </Text>
-                <Text style={styles.subheading}>
-                    Your password is {this.props.password}
-                </Text>
-            </View>
+                <ScrollableTabView>
+                    <ReactPage tabLabel="React" />
+                    <FlowPage tabLabel="Flow" />
+                    <JestPage tabLabel="Jest" />
+                </ScrollableTabView>
         );
     }
  
